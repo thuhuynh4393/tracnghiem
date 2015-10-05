@@ -1,0 +1,92 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Aug 25, 2015, 12:12:35 PM
+    Author     : Samsung
+*/
+
+/*====================================== edit.php ========================================================*/
+/*------------------------class edit---------------*/
+.edit{
+    height: max-content;
+    margin-bottom: 100px;
+}
+/*------------------------task-bar---------------*/
+.task-bar {
+    margin-bottom: 19px;
+}
+    .task-bar .content{
+        clear: both;
+        background: url(../Image/task-bar.jpg) repeat;
+        margin-top: 0px;
+        height: 45px;
+
+    }
+
+        .task-bar .content ul{
+            margin-left: 40px;
+        }
+
+            .task-bar .content ul li{
+                float: left;
+
+            }
+
+                .task-bar .content a{
+                    display: block;
+                    background: url(Image/arrow-right.png) 5px center no-repeat;
+                    padding: 0px 22px;
+                    font: bold 20px/45px Memorandum;
+                    
+                    //padding: 5px 5px 5px 30px;
+                    color: black;
+                }
+
+                .task-bar .content ul li a:hover{
+                    color: #363;
+                    text-decoration: underline;
+
+                }
+/*------------------------box add---------------*/
+.edit .box{
+    
+}
+    
+    .edit .box#box-add .content-box{
+        
+        height: 475px;
+        
+        
+    }
+        .edit .box#box-add .content-box .left-col{
+            width: 185px;
+            height: 475px;
+            margin-right: 100px;
+            float: left;
+        }
+        
+            .edit .box#box-add .content-box .left-col p{
+                color: red;
+                font-size:  22px ; 
+                font-family: Myriad Pro; 
+                margin-bottom: 15px;
+                
+            }
+        
+        .edit .box#box-add .content-box .right-col{
+            width: max-content;
+            height: 475px;
+            
+            margin-left: 200px;
+        }
+            
+            .edit .box#box-add .content-box .right-col ul li {
+                
+            }
+            .edit .box#box-add .content-box .right-col a{
+                background: url(../Image/arrow-down.png) no-repeat;
+                //padding-left: 10px;
+            }

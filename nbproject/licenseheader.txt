@@ -1,0 +1,8 @@
+<#if licenseFirst??>
+${licenseFirst}
+</#if>
+${licensePrefix}Huynh Thi Cam Thu
+${licensePrefix}Luan Van Thi Trac Nghiem Lap Trinh Can Ban ${licensePrefix}
+<#if licenseLast??>
+${licenseLast}
+</#if>

@@ -1,0 +1,168 @@
+@import url("edit.css");
+@import "index.css";
+@import "thitracnghiem.css";
+@import "edit.css";
+@import "tinhdiem.css";
+@import "check-result.css";
+@import "login.css";
+/* CSS Reset */
+
+/*html, div, span, h1, h2, h3, h4, h5, h6, p, img, ul, li, fieldset, form, label { margin: 0; padding: 0;
+                                                                                       border: 0; outline: 0;
+                                                                                       font-size: 100%;
+                                                                                       vertical-align: baseline;
+                                                                                       }*/
+
+ol, ul { list-style: none; }
+
+:focus { outline: 0; }
+
+/* General */
+
+body { background: #f1f1f1; 
+       font: 12px "Lucida Sans Unicode", sans-serif;  
+       color: #555; 
+       height: max-content;
+       position: relative;
+    }
+
+a { text-decoration: none; } 
+/*==============================định dạng cho phần top================================*/
+
+#top_background { background: url("../Image/top_bck.png") repeat-x; 
+                  
+}
+
+.main_container  { margin: 0 auto 0 auto; width: 1000px;  
+                  background: url("../Image/logo_bck.png") no-repeat;
+}
+
+/* Main-container classes */
+
+.top_bar { float: right; position: 
+           relative; top: 0px; right: -11px; 
+          width: 151px; height: 24px; 
+          background: url("../Image/login_bck.png") no-repeat; padding-left: 1px; }
+
+	ul.login li { display: inline; padding-left: 0px;  }
+	ul.login li a { color: #f2f2f2; font-size: 10px; }
+        ul.login li a:hover { color: #cc6600; }
+
+.header { clear: both; height: 145px; margin-bottom: 13px; }
+	.logo { float: left }
+	.logo h1 a { display: block; 
+                     width: 695px; 
+                     height: 100px; 
+                     background: url("../Image/logo.png") no-repeat; 
+                     text-indent: -9999px; margin: 5px 10px 10px 0; }
+
+	ul.navigation { float: right; margin: 0px 40px 0 0; }
+	ul.navigation li { display: inline; margin-left: 30px; }
+	ul.navigation li a { color: #fff; font-size: 14px; 
+                          text-shadow: 1px 1px 0px #155479; }
+        
+        ul.navigation li a:visited {color: #cc00cc}
+        ul.navigation li a:hover { color: #ff0066; text-decoration: underline; }
+                                  
+/*============================== BOX =====================================*/
+.box{
+    font: 12px Arial, Helvetica, sans-serif;
+    text-align: justify;
+}
+	.box .title{
+		height: 43px;
+		line-height: 43px;
+                font-family: Adobe Caslon Pro Bold;
+		font-size: 18px;
+	}
+	
+	.box .header-box{
+		background: url(../Image/box-tl.png) left top no-repeat;
+	}
+	
+		.box .header-box .tr{
+			background: url(../Image/box-tr.png) right top no-repeat;
+		}
+		
+		.box .header-box .tc{
+			background-color: #ffffff;
+			height: 11px;
+			margin: -1px 10px;
+			border-top: 1px solid #e1e1e1;
+		}
+
+	.box .content-box{
+		background-color: #ffffff;
+		padding: 0 12px;
+		margin: -1px 0px;
+		border: 1px solid #e1e1e1;
+		border-width: 0px 1px;
+                height: 271px;
+                
+	}
+
+	.box .footer-box{	
+		background: url(../Image/box-bl.png) left bottom no-repeat;
+	}
+	
+		.box .footer-box .br{
+			background: url(../Image/box-br.png) right bottom no-repeat;
+		}
+		
+		.box .footer-box .bc{
+			background-color: #ffffff;
+			height: 11px;
+			margin: 0 10px;
+			border-bottom: 1px solid #e1e1e1;
+		}
+
+/*==============================định dạng cho dangnhapCB.php=====================================*/
+
+.body {
+    
+    
+}
+/*==============================định dạng cho dangnhapCB.php=====================================*/
+.login_form .dangnhap span{
+    
+    text-transform: uppercase;
+}
+.dangnhap{
+        border: 4px solid #0000ff;
+        padding: 4px;
+        width: 500px;
+        float: right ;
+        margin-right: 300px;
+        margin-top: 100px;
+    }
+    input:focus{ background:  #ffffcc}
+    
+    /*=========================================dinh dang thongtincb.php===============================*/
+    .info_cb{
+        border: 2px solid #555;
+        float: left;
+        display: block;
+        width: 500px;
+        margin-top: 10px;
+        margin-left: 300px;
+    }
+    .info_table{
+        border: 5px solid red;
+    }
+    
+
+
+
+
+/*====================================== FOOTER END PAGE ========================================================*/
+.footer-end{
+    
+    width: 100%;
+    height: 45px;
+    background: #6699cc;
+    
+    bottom: 0px;
+    position: absolute;
+}
+
+

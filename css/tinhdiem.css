@@ -1,0 +1,71 @@
+/*
+Huynh Thi Cam Thu
+Luan Van Thi Trac Nghiem Lap Trinh Can Ban 
+*/
+/* 
+    Created on : Sep 19, 2015, 11:19:28 AM
+    Author     : Samsung
+*/
+
+.tinhdiem{
+    
+}
+
+.tinhdiem-content{
+    position: relative;
+}
+
+.tinhdiem .box#box-tinhdiem{
+    margin-left: 200px ;
+    margin-right: 200px;
+    transform: skewX(0deg);
+}
+
+.tinhdiem .box#box-tinhdiem .point-comment{
+    margin-bottom: 5px;
+    height: 200px;
+}
+    .tinhdiem .box#box-tinhdiem .diem{
+    text-align: center;
+    color: red;
+    
+    }
+    
+    .tinhdiem .box#box-tinhdiem .cmt{
+    text-align: center;
+    color: blue;
+    }
+    
+    .tinhdiem .box#box-tinhdiem .choosen{
+        width: max-content;
+        height: 45px;
+        bottom: 0px;
+        
+        position: relative;
+    }
+    
+        .tinhdiem .box#box-tinhdiem .choosen .check-result{
+            width: 300px;
+            height: 20px;
+            margin-left: 180px;
+            
+            left: 0px;
+            top: 0px;
+            position: absolute;
+        }
+        
+            .tinhdiem .box#box-tinhdiem .choosen .check-result button{
+            width: 200px;
+            
+            }
+        
+        .tinhdiem .box#box-tinhdiem .choosen .try-again{
+            width: 300px;
+            height: 20px;
+            margin-left:  250px;
+            
+            right: 0px;
+            top: 0px;
+            position: absolute;
+            line-height: 20px;
+        }

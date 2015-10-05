@@ -1,0 +1,44 @@
+/*
+Huynh Thi Cam Thu
+Luan Van Thi Trac Nghiem Lap Trinh Can Ban 
+*/
+/* 
+    Created on : Sep 23, 2015, 5:39:21 PM
+    Author     : Samsung
+*/
+
+.box#box-result {   
+    margin-left: 200px;
+    margin-right: 150px;
+    width: auto;
+    margin-bottom: 15px;
+}
+
+.box#box-result .content-box{
+    height: auto;
+    
+}
+
+    .box#box-result .content-box .result-question{
+    color: blue;
+    font-size: 25px;
+    font-family: Scribble;
+    display: block;
+    margin-bottom: 10px;
+    
+    }
+    
+    .box#box-result .content-box .result-answer{
+        color: #6699cc;
+        font-size: 20px;
+        display: block;
+        margin-bottom: 10px;
+        
+    }
+    
+    .box#box-result .content-box .result-comment{
+        color: #ff0066;
+        font-size: 15px;
+        display: block;
+        
+    }
