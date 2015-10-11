@@ -20,7 +20,7 @@
             <div class="top_bar">
                     <!--Background Login-->
                     <ul class="login">
-                        <li><a href="dangnhapCB.php">Đăng nhập |</a></li>
+                        <li><a href="login.php">Đăng nhập |</a></li>
                             <li><a href="#">Đăng ký</a></li>
                     </ul>
             </div>
@@ -129,8 +129,8 @@
 
                                 echo "<div class='content-box'>";
                                    echo "<span class='question'>     ";
-                                         echo "".$row['noidungcauhoi']."<br/>";
-                                         echo "<input type='hidden' name=>".$row['mucdo']."";
+                                         echo $row['noidungcauhoi'];
+                                         //echo "<input type='hidden' name=>".$row['mucdo']."";
                                    echo "</span>";
                                    echo "<span class='answer'>";
                                             $query_ans = "SELECT * FROM traloi WHERE macauhoi=".$row['macauhoi'];

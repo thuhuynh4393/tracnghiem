@@ -5,13 +5,14 @@
 ?>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<title>Cập nhật đề thi</title>
+<title>Xóa Câu Hỏi</title>
 <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
 <link href="css/line.css" rel="stylesheet" type="text/css"/>
 <link href="css/style.css" rel="stylesheet" type="text/css"/>
 <script src="jquery.js" type="text/javascript"></script>
 <link href="css/reset.css" rel="stylesheet" type="text/css"/>
 <link href="css/form.css" rel="stylesheet" type="text/css"/>
+<script src="js/alert.js" type="text/javascript"></script>
 </head>
 <body>
 
@@ -19,12 +20,10 @@
         if($_SESSION['userLogin']==FALSE){
             header("location:login.php");
             }
-        function logout() {
-            session_unset();
-        }
+        
     ?>
 
-<div class="edit">
+<div class="delete">
         <div id="top_background">
 
             <div class="main_container">
@@ -53,8 +52,9 @@
         </div>
     
     <div class="clr"></div>
-<!-------------FORM ADD - START --------->
-        <div class="box" id="box-edit">
+    
+<!-------------FORM DELETE - START --------->
+        <div class="box" id="box-delete">
                     <!-- tạo góc bo tròn cho box login-->
                 <div class="header-box"><div class="tr"><div class="tc"></div></div></div>
                 <!-- Noi dung list de thi-->
@@ -72,21 +72,45 @@
                         </div>
 
                     </div>
-                    
-                    
+                    <!-- delete câu hỏi-->
+                    <div id="delete">
+                        
+                            <?php
+                                require_once './function.php';
+                                $query_del="SELECT cauhoi.macauhoi,cauhoi.noidungcauhoi,traloi.noidung "
+                                        . "FROM cauhoi,dapan,traloi "
+                                        . "WHERE cauhoi.macauhoi=dapan.macauhoi and dapan.matraloi=traloi.matraloi  ";
+                                $result_del=  getData($query_del);
+                                while ($row = mysql_fetch_array($result_del)) {
+                                    echo "<div class='del-row'>";
+                                        echo "<span class='id'>";
+                                            echo $row['macauhoi'];
+                                            
+                                        echo "</span>";
+
+                                        echo "<span class='content'>";
+                                            echo $row['noidungcauhoi'];
+                                        echo "</span>";
+
+                                        echo "<span class='ans'>";
+                                            echo "Đáp Án: ".$row['noidung'];
+                                        echo "</span>";
+                                        
+                                        echo "<div class='btn-del'>";
+                                            echo "<a class='del'  onclick='confirmDelete();'>Xóa</a>";
+                                        echo "</div>";
+                                    echo "</div>";
+                                }
+                            ?>
+                        
+                    </div>
                     
                 </div>
                 <div class="footer-box"><div class="br"><div class="bc"></div></div></div>
         </div>
 <!-------------FORM ADD - START --------->
 
-    <?php
-print_r($_SESSION);
-?>
-    
-</div>
-        
-    
+
 
     
 

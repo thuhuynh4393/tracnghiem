@@ -98,8 +98,8 @@ session_start();
                    
                    //--- tính số câu Sai trên hai mang traloi va dapan, trả về Mảng gồm các câu sai
                    $result_unmatch = array_diff_assoc($traloi, $dapan);
-                   echo "câu sai: ";
-                   print_r($result_unmatch);
+                   //echo "câu sai: ";
+                   //print_r($result_unmatch);
                    
                    //chuỗi lưu câu hỏi sai lưu để dùng cho truy vấn csdl phần chap(chương) vd $wrong_ques ="(3,4,9,10,0)"
                     $wrong_ques ="(";            
@@ -131,32 +131,32 @@ session_start();
                    while ($row_chap = mysql_fetch_array($result_chap)) {
                        array_push($wrong_chap, $row_chap['chap']);
                     }
-                   echo "<br>WrONG chap:";
-                   print_r($wrong_chap);
+                   //echo "<br>WrONG chap:";
+                   //print_r($wrong_chap);
                    //đếm số chap sai theo từng chap
                    $count_wrong_chap=array_count_values($wrong_chap);
-                   echo "<br>COUNT WrONG chap:";
-                   print_r($count_wrong_chap);
+                   //echo "<br>COUNT WrONG chap:";
+                   //print_r($count_wrong_chap);
                    
                    //tính số chap sai nhiều nhất
                    $max_sp=array(max($count_wrong_chap));
                    $chap = array_intersect($count_wrong_chap, $max_sp);
                    
-                   echo "<br>Chap sai nhiều nhất: ";
-                   print_r($chap);
+                   //echo "<br>Chap sai nhiều nhất: ";
+                   //print_r($chap);
                    $chap_max="(";
                    foreach ($chap as $key => $value) {
                        $chap_max= $chap_max.$key.",";
                    }
                    $chap_max=$chap_max."0)";
-                   echo "<br>Chap sai nhiều nhất: ".$chap_max;
+                   //echo "<br>Chap sai nhiều nhất: ".$chap_max;
                    
                    //lấy nội dung chap sai nhiều nhất
-                   $comment_chap="Bạn cần xem lại nội dung: ";
+                   $comment_chap="Bạn cần xem lại nội dung: <br>";
                    $query_chap="SELECT noidung FROM chap WHERE chap in ".$chap_max;
                    $result_chap_cmt = mysql_query($query_chap) or die("Lỗi query Chap max") . mysql_error();
                    while ($row_chap = mysql_fetch_array($result_chap_cmt)) {
-                       $comment_chap = $comment_chap.$row_chap['noidung']." ";
+                       $comment_chap = $comment_chap.$row_chap['noidung'].", ";
                     }
                    
                    //-----------Box hiển thị điểm, comment

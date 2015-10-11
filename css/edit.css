@@ -52,23 +52,26 @@ and open the template in the editor.
                 }
 /*------------------------box add---------------*/
 .edit .box{
+    margin: 50px 50px;
+    
+    
     
 }
     
-    .edit .box#box-add .content-box{
+    .edit .box#box-edit .content-box{
         
-        height: 475px;
+        height: 800px;
         
         
     }
-        .edit .box#box-add .content-box .left-col{
+        .edit .box#box-edit .content-box .left-col{
             width: 185px;
             height: 475px;
             margin-right: 100px;
             float: left;
         }
         
-            .edit .box#box-add .content-box .left-col p{
+            .edit .box#box-edit .content-box .left-col p{
                 color: red;
                 font-size:  22px ; 
                 font-family: Myriad Pro; 
@@ -76,17 +79,17 @@ and open the template in the editor.
                 
             }
         
-        .edit .box#box-add .content-box .right-col{
+        .edit .box#box-edit .content-box .right-col{
             width: max-content;
             height: 475px;
             
             margin-left: 200px;
         }
             
-            .edit .box#box-add .content-box .right-col ul li {
+            .edit .box#box-edit .content-box .right-col ul li {
                 
             }
-            .edit .box#box-add .content-box .right-col a{
+            .edit .box#box-edit .content-box .right-col a{
                 background: url(../Image/arrow-down.png) no-repeat;
                 //padding-left: 10px;
             }

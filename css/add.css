@@ -1,0 +1,50 @@
+/*
+Huynh Thi Cam Thu
+Luan Van Thi Trac Nghiem Lap Trinh Can Ban 
+*/
+/* 
+    Created on : Oct 7, 2015, 4:13:17 PM
+    Author     : Samsung
+*/
+.add .box#box-add {
+    margin: 50px 50px;    
+}
+
+.add .box#box-add .content-box {
+    
+    height: auto;
+    
+}
+
+#add .row{
+    margin: 0px 100px;
+    padding: 50px 50px;
+    display: block;
+    height: auto;
+    border-bottom: 1px solid #000 ;
+    width: 900px;
+    
+}
+
+#add .row p{
+    font-size: 20px;
+    float: left;
+    //margin-right: 50px;
+    width: 200px;
+}
+
+#add .row span {
+    margin-left: 120px;
+    line-height: 20px;
+}
+
+#add .row span input{
+    font-size: 20px;
+    width: 400px;
+    height: 20px;
+}
+
+#add .row #question{
+    width: 400px;
+    height: 120px;
+}

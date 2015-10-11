@@ -15,15 +15,27 @@ and open the template in the editor.
 }
         .main .left{            
             float: left;
-            margin-left: 170px;
+            margin-left: 100px;
             width: 300px;
             height: 450px;
-            background: red;
+            //background: red;
             padding-top: 50px;
-           }    
-       
+           }  
+           
+           .main .left .choosen{            
+            margin-bottom: 25px;
+           // background: url(../Image/box-tr.png);
+            text-align: center;
+            display: block;
+           }
+                .main .left .choosen a{            
+                    margin-bottom: 25px;
+                    color: white;
+                    text-align: center;
+                    display: block;
+                   }
        .main .right{                     
-           margin-left: 500px;
+           margin-left: 390px;
            width: 900px;         
        }
 /*================ index.php - main- LEFT(NOI DUNG cot bên trái)========================*/

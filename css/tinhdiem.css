@@ -21,9 +21,14 @@ Luan Van Thi Trac Nghiem Lap Trinh Can Ban
     transform: skewX(0deg);
 }
 
+.tinhdiem .box#box-tinhdiem .content-box{
+    height: 374px;
+}
+
 .tinhdiem .box#box-tinhdiem .point-comment{
-    margin-bottom: 5px;
-    height: 200px;
+    margin-bottom: 15px;
+    height: 300px;
+    
 }
     .tinhdiem .box#box-tinhdiem .diem{
     text-align: center;

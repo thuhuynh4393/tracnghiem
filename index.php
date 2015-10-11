@@ -1,8 +1,11 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
  "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<?php
+    session_start();
+?>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<title>Trang ch?</title>
+<title>Trang chủ</title>
 <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
 <link href="css/style.css" rel="stylesheet" type="text/css"/>
 <link href="css/reset.css" rel="stylesheet" type="text/css"/>
@@ -22,8 +25,8 @@
             <div class="top_bar">
                 <!--Background Login-->
 		<ul class="login">
-                    <li><a href="login.php">�ang nh?p |</a></li>
-			<li><a href="#">�ang k�</a></li>
+                    <li><a href="login.php">Đăng nhập |</a></li>
+			<li><a href="#">Đăng ký</a></li>
 		</ul>
                 
             </div>
@@ -31,12 +34,12 @@
             <div class="header">
                 <!--Logo Thi TNLTCB-->
 		<div class="logo">
-			<h1><a href="#">Thi Tr?c nghi?m L?p Tr�nh Can B?n</a></h1>
+			<h1><a href="#">Thi Trắc nghiệm Lập Trình Căn Bản</a></h1>
 		</div>
                               
                 <!--Menu-->
 		<ul class="navigation">
-			<li><a href="#">Trang ch?</a></li>
+                    <li><a href="index.php">Trang chủ</a></li>
 			<li><a href="http://elcit.ctu.edu.vn/">Elcit</a></li>
 			<li><a href="http://www.ctu.edu.vn/">CTU</a></li>
 			<li><a href="https://www.google.com/">Google</a></li>
@@ -55,9 +58,14 @@
         <!-- LEFT noi dung cot ben trai - START-->
         
         <div class ="left">
+            <div class="choosen">
+                <a class="btn-choosen" href="thitracnghiem.php"><span>Thi Trắc Nghiệm</span></a>
+            </div>
             
-            <a href="thitracnghiem.php">Thi Tr?c Nghi?m</a>
-            <a href="edit.php" onclick="return checklog()">C?p nh?t d? thi</a>
+            <div class="choosen">
+                <a class="btn-choosen" href="edit.php"><span>Cập nhật đề thi</span></a>
+            </div>
+            
             
             
         </div>
@@ -70,9 +78,9 @@
             
              <!-- Div mau xam o bao boc ben ngoai-->
             <div id="zSlider">
-                <!-- - START - div ch?a ?nh l?n -->
+                <!-- - START - div chứa ảnh lớn -->
                 <div class="zSlider-img">
-                    <!-- - START - div insert ?nh l?n -->
+                    <!-- - START - div insert ảnh lớn -->
                     <div class="zSlider-img-ins">
                         <div class="zSlider-img-content">
                             <img src="Image/img920x360/loading.jpg"></img>
@@ -80,9 +88,9 @@
                         </div>
                     </div>
                 </div>
-                <!-- - END - div ch?a ?nh l?n -->
+                <!-- - END - div chứa ảnh lớn -->
                 
-                <!-- START - div bar ch?a title ?nh v� button - -->
+                <!-- START - div bar chứa title ảnh và button - -->
                 <div class="zSlider-bar">
                     <div class="zSlider-bar-left-arrow"></div>
                     <div class="zSlider-bar-content">
@@ -91,9 +99,9 @@
                     </div>
                     <div class="zSlider-bar-right-arrow"></div>
                 </div>
-                <!-- END -div bar ch?a title ?nh v� button - -->
+                <!-- END -div bar chứa title ảnh và button - -->
                 
-                <!-- START -  ch?a ?nh nh?-->
+                <!-- START -  chứa ảnh nhỏ-->
                 <div class="zSlider-thumb">
                     <div class="zSlider-thumb-bar">
                         <ul>
@@ -149,7 +157,7 @@
                         </ul>
                     </div>
                 </div>
-                <!-- END -  ch?a ?nh nh?-->
+                <!-- END -  chứa ảnh nhỏ-->
             </div>
              
             <div class="clr"></div>
@@ -166,7 +174,9 @@
     </div>
     <!-- NOI DUNG - END-->
 
-   
+       <?php
+print_r($_SESSION);
+?>
        
     
 </body>

@@ -72,6 +72,7 @@ and open the template in the editor.
                 .tracnghiem .right .box#box-nddt .content-box .question{                     
                     font: italic bold 40px/30px Georgia, serif;
                     display: block;
+                    padding-bottom: 15px;
 
                 }
                 

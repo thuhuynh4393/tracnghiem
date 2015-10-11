@@ -5,6 +5,8 @@
 @import "tinhdiem.css";
 @import "check-result.css";
 @import "login.css";
+@import "add.css";
+@import "delete.css";
 /* CSS Reset */
 
 /*html, div, span, h1, h2, h3, h4, h5, h6, p, img, ul, li, fieldset, form, label { margin: 0; padding: 0;
@@ -13,7 +15,7 @@
                                                                                        vertical-align: baseline;
                                                                                        }*/
 
-ol, ul { list-style: none; }
+ol, ul { list-style: none;     padding-left: 20px; }
 
 :focus { outline: 0; }
 
@@ -68,6 +70,7 @@ a { text-decoration: none; }
 .box{
     font: 12px Arial, Helvetica, sans-serif;
     text-align: justify;
+        box-shadow: 1px 1px 45px #C3BDBD;
 }
 	.box .title{
 		height: 43px;

@@ -9,6 +9,7 @@ and open the template in the editor.
 */
 
 /*--------------------------------INPUT BOX LOGIN ---------------------------------------------------*/
+
 #box-login #login-form .row span.button{
     display: block;
     background: url("../Image/bg-text-l.gif") left top no-repeat;
@@ -30,15 +31,30 @@ and open the template in the editor.
         height: 27px;
         line-height: 27px;
         margin: 0px 6px;
-        width: 166px;
+        width: 220px;
     }
     
     #box-login #login-form .row span.button span input:focus{
         
     }
     
-    /*----------------------------------------------BUTTON----------------------------------------------*/
-    button {
-        height: 20px;
-        width: 55px;
-    }
+/*----------------------------------------------BUTTON----------------------------------------------*/
+button {
+    height: 20px;
+    width: 55px;
+}
+    
+.main .left .choosen .btn-choosen{            
+        background: url(../Image/black-bg.jpg) right top repeat;
+        padding-right: 5px;
+        display: inline-block;
+        height: 44px;
+        width: 100px;
+        line-height: 44px;
+}
+
+.del{
+    width: 100px;
+    height: 50px;
+    background: yellow;
+}

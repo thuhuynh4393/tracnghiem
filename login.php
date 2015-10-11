@@ -1,20 +1,23 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
  "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<?php
+    session_start();
+?>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<title>Trang chủ</title>
-<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
-<link href="css/style.css" rel="stylesheet" type="text/css"/>
-<link href="css/reset.css" rel="stylesheet" type="text/css"/>
-<link href="css/form.css" rel="stylesheet" type="text/css"/>
-<link href="css/slider.css" rel="stylesheet" type="text/css"/>
-<script src="js/jquery-1.10.0.min.js" type="text/javascript"></script>
-<script src="js/slider.js" type="text/javascript"></script>
-<script src="js/login.js" type="text/javascript"></script>
+    <title>Trang chủ</title>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <link href="css/style.css" rel="stylesheet" type="text/css"/>
+    <link href="css/reset.css" rel="stylesheet" type="text/css"/>
+    <link href="css/form.css" rel="stylesheet" type="text/css"/>
+    <link href="css/slider.css" rel="stylesheet" type="text/css"/>
+    <script src="js/jquery-1.10.0.min.js" type="text/javascript"></script>
+    <script src="js/slider.js" type="text/javascript"></script>
+    <script src="js/login.js" type="text/javascript"></script>
 </head>
 <body>
 
-    
+    <div class="wrapper">
         <!-- LOGO HEADER - Start-->
         <div id="top_background">
 
@@ -61,24 +64,28 @@
                         <!-- tạo góc bo tròn cho box login-->
                     <div class="header-box"><div class="tr"><div class="tc"></div></div></div>
                     <div class="content-box">
-                        <h3 class="title">Login Form</h3>
+                        <h3 class="title">Login</h3>
                         <form action="dangnhapCB.php" method="post" id="login-form" onsubmit="return checklog()">
                             <!-- User-->
+                            <span><p>Username:</p></span>
                             <div class="row" style="margin-bottom: 11px">
-                                <span class="button">
-                                    <span><input id="us" type="text" name="username"  /></span>
-                                    
+                                <span class="button">                                    
+                                    <span><input id="us" type="text" name="username"  /></span>                                    
                                 </span>
                             </div>
                             <!-- PASSWORD-->
+                            <span><p>Password:</p></span>
                             <div class="row" style="padding-bottom: 10px" >
-                                <span class="button">
+                                <span class="button">                                    
                                     <span><input type="password" name="password"/></span>
                                 </span>
                             </div>
-                            <input type="button" value="BUTTON" onclick="checklog()"/><br/>
-                            <input type="submit" value="Login"/><br/>
-                            <input type="checkbox"/><label>Remember Me</label>
+                            <!-- SUBMIT-->
+                            <div class="row" style="padding-bottom: 10px" >
+                                <input type="submit" value="Login"/><br/>
+                            </div>
+                            
+                            
                             <div style="margin-left: 11px"><p id="text"></p></div>
                         </form>
                     </div>
@@ -103,9 +110,11 @@
         </div>
         <!-- NOI DUNG - END-->
 
-   
+    </div>
        
-    
+        <?php
+print_r($_SESSION);
+?>
 </body>
     
 </html>
