@@ -58,18 +58,11 @@
         <!-- LEFT noi dung cot ben trai - START-->
         
         <div class ="left">
-            <div class="choosen">
-                <a class="btn-choosen" href="thitracnghiem.php"><span>Thi Trắc Nghiệm</span></a>
-            </div>
             
-            <div class="choosen">
-                <a class="btn-choosen" href="edit.php"><span>Cập nhật đề thi</span></a>
-            </div>
-            
-            
-            
-        </div>
+            <a class="btn" href="thitracnghiem.php">Thi Trắc Nghiệm</a><br></br>
+            <a class="btn" href="edit.php">Cập nhật đề thi</a>
         
+        </div>
         <!-- LEFT noi dung cot ben trai- END-->
         
         <!-- RIGHT noi dung cot ben phai-->

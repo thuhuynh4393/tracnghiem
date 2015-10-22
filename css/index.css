@@ -16,7 +16,7 @@ and open the template in the editor.
         .main .left{            
             float: left;
             margin-left: 100px;
-            width: 300px;
+            width: auto;
             height: 450px;
             //background: red;
             padding-top: 50px;
@@ -24,16 +24,11 @@ and open the template in the editor.
            
            .main .left .choosen{            
             margin-bottom: 25px;
-           // background: url(../Image/box-tr.png);
+            //width: 185px;
             text-align: center;
             display: block;
            }
-                .main .left .choosen a{            
-                    margin-bottom: 25px;
-                    color: white;
-                    text-align: center;
-                    display: block;
-                   }
+                
        .main .right{                     
            margin-left: 390px;
            width: 900px;         

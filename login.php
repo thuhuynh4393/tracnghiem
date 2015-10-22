@@ -80,6 +80,18 @@
                                     <span><input type="password" name="password"/></span>
                                 </span>
                             </div>
+                            <!--Thông báo sai thông tin đăng nhập-->
+                            <span class="Error">
+                                <p> 
+                                    <?php
+                                        if(isset($_SESSION['loginErr'])){
+                                            echo "* ".$_SESSION['loginErr']; 
+                                            unset($_SESSION['loginErr']);
+                                        }
+                                        
+                                    ?>
+                                </p>
+                            </span>
                             <!-- SUBMIT-->
                             <div class="row" style="padding-bottom: 10px" >
                                 <input type="submit" value="Login"/><br/>

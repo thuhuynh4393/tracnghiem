@@ -58,3 +58,16 @@ button {
     height: 50px;
     background: yellow;
 }
+
+.btn{
+	background: black;
+        text-decoration: none;
+        color: white;
+        padding: 10px 40px;
+}
+
+.btn:hover {
+	background: #117bff;
+	cursor: pointer; 
+	transition: background .5s;  
+}

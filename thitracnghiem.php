@@ -7,6 +7,7 @@
     <link href="css/form.css" rel="stylesheet" type="text/css"/>
     <link href="css/line.css" rel="stylesheet" type="text/css"/>
     <script src="js/time.js" type="text/javascript"></script>
+    
 </head>
 <body>
 <div class="tracnghiem">

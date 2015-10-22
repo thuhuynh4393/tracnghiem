@@ -19,7 +19,7 @@ Luan Van Thi Trac Nghiem Lap Trinh Can Ban
         .delete .box#box-delete .content-box #delete .del-row{
 
             //background: red;
-            margin: 20px 0px 20px 0px;
+            margin: 20px 0px 0px 20px;
             padding: 35px 35px;
             border-bottom: 1px solid #000 ;
 
@@ -36,29 +36,59 @@ Luan Van Thi Trac Nghiem Lap Trinh Can Ban
             margin-right: 50px;
             font-size: 35px;
             font-weight: bold;
-
+            float: left;
         }
         
         .delete .box#box-delete .content-box #delete .del-row .content{
-
+            //background: red;
             font-size: 35px;
-
+            font-family: VnAvant;
+            transition: height 2s,font-size 1s;
+        }
+        
+        .delete .box#box-delete .content-box #delete .del-row .content:hover{
+            //background: red;
+            font-size: 55px;
+            height: auto;
+            
         }
         
         .delete .box#box-delete .content-box #delete .del-row .ans{
 
             display: block;
-            margin-left: 50px;
-            font-size: 35px;
+            margin-left: 70px;
+            margin-top: 20px;
+            font-size: 25px;
+            font-family: VnAvant;
 
         }
         
         .delete .box#box-delete .content-box #delete .del-row .btn-del{
 
             display: block;
-            margin-left: 50px;
+            padding-left: 950px;
             font-size: 35px;
             display: block;
             margin-right: 0px;
-
+            
         }
+        
+            .delete .box#box-delete .content-box #delete .del-row .btn-del input{
+                background: url('../Image/black-bg.jpg.png');
+                font-size: 20px;
+                width: 100px;
+                transition: color 0.1s, background 0.1s;
+            }
+        
+            .delete .box#box-delete .content-box #delete .del-row .btn-del input:hover{
+                background: green;
+                color: red;
+                
+            }
+            
+            .delete .box#box-delete .content-box #delete .del-row .btn-del a{
+                background: url('../Image/black-bg.jpg.png');
+                font-size: 20px;
+                width: 100px;
+                transition: color 0.1s, background 0.1s;
+            }

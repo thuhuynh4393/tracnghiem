@@ -75,33 +75,35 @@
                     <!-- delete câu hỏi-->
                     <div id="delete">
                         
-                            <?php
-                                require_once './function.php';
-                                $query_del="SELECT cauhoi.macauhoi,cauhoi.noidungcauhoi,traloi.noidung "
+                        <?php
+                            require_once './function.php';
+                            $query_del="SELECT cauhoi.macauhoi,cauhoi.noidungcauhoi,traloi.noidung "
                                         . "FROM cauhoi,dapan,traloi "
                                         . "WHERE cauhoi.macauhoi=dapan.macauhoi and dapan.matraloi=traloi.matraloi  ";
-                                $result_del=  getData($query_del);
-                                while ($row = mysql_fetch_array($result_del)) {
-                                    echo "<div class='del-row'>";
-                                        echo "<span class='id'>";
+                            $result_del=  getData($query_del);
+                            while ($row = mysql_fetch_array($result_del)) {
+                                echo "<div class='del-row'>";
+                                    echo "<form id='delForm' action='del-action.php' method='post' >";
+                                        echo "<div class='id'>";
                                             echo $row['macauhoi'];
-                                            
-                                        echo "</span>";
-
-                                        echo "<span class='content'>";
-                                            echo $row['noidungcauhoi'];
-                                        echo "</span>";
-
-                                        echo "<span class='ans'>";
-                                            echo "Đáp Án: ".$row['noidung'];
-                                        echo "</span>";
-                                        
-                                        echo "<div class='btn-del'>";
-                                            echo "<a class='del'  onclick='confirmDelete();'>Xóa</a>";
+                                            echo "<input type='hidden' name='del-id' value=".$row['macauhoi']."></input>";
                                         echo "</div>";
-                                    echo "</div>";
-                                }
-                            ?>
+
+                                        echo "<div class='content'>";
+                                            echo $row['noidungcauhoi'];
+                                        echo "</div>";
+
+                                        echo "<div class='ans'>";
+                                            echo "Đáp Án: ".$row['noidung'];
+                                        echo "</div>";
+
+                                        echo "<div class='btn-del'>";
+                                            echo "<input type='submit' name='del-submit'  value='Xóa'></input>";
+                                        echo "</div>";
+                                    echo "</form>";
+                                echo "</div>";
+                            }
+                        ?>
                         
                     </div>
                     
