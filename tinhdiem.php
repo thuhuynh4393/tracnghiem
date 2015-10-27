@@ -17,36 +17,7 @@ session_start();
     
     <!-- LOGO HEADER - Start-->
     
-    <div id="top_background">
-
-        <div class="main_container">
-
-            <div class="top_bar">
-                    <!--Background Login-->
-                    <ul class="login">
-                        <li><a href="dangnhapCB.php">Đăng nhập |</a></li>
-                            <li><a href="#">Đăng ký</a></li>
-                    </ul>
-            </div>
-
-            <div class="header">
-                    <!--Logo Thi TNLTCB-->
-                <div class="logo">
-                    <h1><a href="index.php">Thi Trắc nghiệm Lập Trình Căn Bản</a></h1>
-                </div>
-
-                    <!--Menu-->
-                    <ul class="navigation">
-                        <li><a href="index.php">Trang chủ</a></li>
-                            <li><a href="http://elcit.ctu.edu.vn/">Elcit</a></li>
-                            <li><a href="http://www.ctu.edu.vn/">CTU</a></li>
-                            <li><a href="https://www.google.com/">Google</a></li>
-                    </ul>
-
-            </div>
-
-        </div>
-    </div>
+   
     
     <!-- LOGO HEADER - END-->
     
@@ -79,16 +50,20 @@ session_start();
                     
                     //truy vấn và lấy dữ liệu
                    $query_dapan = "SELECT * FROM dapan WHERE macauhoi in ".$string_ques;
-                   $result_dapan = mysql_query($query_dapan,$conn) or die("Lỗi truy vấn Đáp án" . mysql_error() . "<br/>");
-                   while ($row_dapan = mysql_fetch_array($result_dapan)) {
+                   $result_dapan = mysqli_query($conn,$query_dapan) or die("Lỗi truy vấn Đáp án" . mysqli_error() . "<br/>");
+                   while ($row_dapan = mysqli_fetch_array($result_dapan)) {
                        //thêm đáp án vào mảng $dapan
                        $dapan[$row_dapan['macauhoi']]=$row_dapan['matraloi'];
                    }
                    
+                   //echo "tra loi";
+                   //print_r($traloi);
+                   //echo "dapan";
+                   //print_r($dapan);
                     
-                   //--- tính số câu đúng trên hai mang traloi va dapan,trả về là một mảng gồm câu giống nhau
-                   $result_match = array_intersect($traloi, $dapan);
-                   
+                   //--- tính số câu đúng trên hai mang traloi va dapan,trả về là một mảng gồm câu giống nhau(đúng)
+                   $result_match = array_intersect_assoc($traloi, $dapan);
+                   //print_r($result_match);
                    
                    //gán biến session
                    $_SESSION["your_answer"]=$traloi;
@@ -112,23 +87,23 @@ session_start();
                    //điểm,phần trăm
                    $diem =count($result_match);//điểm bằng số câu trả lời đúng
                    $sai=count($result_unmatch);
-                   $percent = ($diem/50)*100;
+                   $percent = ($diem*100)/50;
                    $string_percent="Bạn đạt ".$percent."%";
                    
                    //lời nhận xét                   
                    if($diem<5){
-                        $comment="Bạn dỡ tệ";
+                        $comment="Bạn nên học chăm chỉ";
                    }elseif ($diem>=5 && $diem<9) {
                         $comment="Bạn Cần cố gắng hơn";
                    }  else {
-                        $comment="Bạn là siêu nhân";
+                        $comment="Bạn rất xuất sắc";
                    }
                    
                    //-----------khuyên phần nên học lại
                    //lấy chap sai
                    $query_chap="SELECT chap FROM cauhoi WHERE macauhoi in ".$wrong_ques;
-                   $result_chap = mysql_query($query_chap) or die("Lỗi query Chap") . mysql_error();
-                   while ($row_chap = mysql_fetch_array($result_chap)) {
+                   $result_chap = mysqli_query($conn,$query_chap) or die("Lỗi query Chap") . mysqli_error();
+                   while ($row_chap = mysqli_fetch_array($result_chap)) {
                        array_push($wrong_chap, $row_chap['chap']);
                     }
                    //echo "<br>WrONG chap:";
@@ -139,23 +114,30 @@ session_start();
                    //print_r($count_wrong_chap);
                    
                    //tính số chap sai nhiều nhất
-                   $max_sp=array(max($count_wrong_chap));
-                   $chap = array_intersect($count_wrong_chap, $max_sp);
+                   if(empty($count_wrong_chap)){
+                       $max_sp=0;
+                       $chap_max="(0)";
+                   }  else {
+                       $max_sp=array(max($count_wrong_chap));
+                       $chap = array_intersect($count_wrong_chap, $max_sp);
                    
-                   //echo "<br>Chap sai nhiều nhất: ";
-                   //print_r($chap);
-                   $chap_max="(";
-                   foreach ($chap as $key => $value) {
-                       $chap_max= $chap_max.$key.",";
+                        //echo "<br>Chap sai nhiều nhất: ";
+                        //print_r($chap);
+                        $chap_max="(";
+                        foreach ($chap as $key => $value) {
+                            $chap_max= $chap_max.$key.",";
+                        }
+                        $chap_max=$chap_max."0)";
                    }
-                   $chap_max=$chap_max."0)";
+                   
+                   
                    //echo "<br>Chap sai nhiều nhất: ".$chap_max;
                    
                    //lấy nội dung chap sai nhiều nhất
-                   $comment_chap="Bạn cần xem lại nội dung: <br>";
+                   $comment_chap="Nội dung cần xem lại: <br>";
                    $query_chap="SELECT noidung FROM chap WHERE chap in ".$chap_max;
-                   $result_chap_cmt = mysql_query($query_chap) or die("Lỗi query Chap max") . mysql_error();
-                   while ($row_chap = mysql_fetch_array($result_chap_cmt)) {
+                   $result_chap_cmt = mysqli_query($conn,$query_chap) or die("Lỗi query Chap max") . mysqli_error();
+                   while ($row_chap = mysqli_fetch_array($result_chap_cmt)) {
                        $comment_chap = $comment_chap.$row_chap['noidung'].", ";
                     }
                    
@@ -173,40 +155,31 @@ session_start();
                                 echo "<span class='diem'><h1>câu sai: ".$sai."</h1></span>";
                                 echo "<br>";  
                                 echo "<span class='diem'><h1>".$string_percent."</h1></span>";
-                                echo "<br>";    
-                                echo "<span class='cmt'><h1>". $comment." .</h1></span>";
+                                echo "<br>";
                                 echo "<span class='cmt'><h1>". $comment_chap." .</h1></span>";
                             echo "</div>";
                             // --- chứa các button check result và Try Again
                             echo "<div class='choosen'>";
-                                echo "<form action='check-result.php' method='post'>";
+                                //echo "<form action='check-result.php' method='post'>";
                                     echo "<div class='check-result'>";
-                                        echo "<button type='submit' target='_blank'>Kiểm tra kết quả</button>";
+                                        echo "<a class='btn' href='check-result.php'>Kiểm tra kết quả</button>";
                                     echo "</div>";
-                                echo "</form>";
+                                //echo "</form>";
                                 
-                                echo "<form action='thitracnghiem.php' method='post'>";
+                                //echo "<form action='quiz.php' method='post'>";
                                     echo "<div class='try-again'>";
-                                            echo "<button type='submit'>Làm lại</button>";
+                                            echo "<a class='btn' href='quiz.php'>Test mới</a>";
                                     echo "</div>";
-                                echo "</form>";
+                                //echo "</form>";
                             echo "</div>";
                         echo "</div>";
                         
                         echo "<div class='footer-box'><div class='br'><div class='bc'></div></div></div>";
                     echo "</div>";
-                   
-                   
-                   
                 ?>
             </div>
     </div>
     </div>
     <!-- NOI DUNG - END-->
-
-
-    
-    
-
 </body>
 </html>

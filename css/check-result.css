@@ -16,24 +16,27 @@ Luan Van Thi Trac Nghiem Lap Trinh Can Ban
 
 .box#box-result .content-box{
     height: auto;
-    
+    padding: 30px;
 }
 
     .box#box-result .content-box .result-question{
-    color: blue;
-    font-size: 25px;
-    font-family: Scribble;
+    color: black;
+    font-size: 17px;
+    font-family: "Times New Roman";
     display: block;
     margin-bottom: 10px;
     
     }
     
     .box#box-result .content-box .result-answer{
-        color: #6699cc;
+        color: #0000ff;
         font-size: 20px;
-        display: block;
         margin-bottom: 10px;
-        
+    }
+    
+    .box#box-result .content-box .result-answer h3{
+        color: brown;
+        display: inline;
     }
     
     .box#box-result .content-box .result-comment{

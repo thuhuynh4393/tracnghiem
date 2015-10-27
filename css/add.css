@@ -6,11 +6,11 @@ Luan Van Thi Trac Nghiem Lap Trinh Can Ban
     Created on : Oct 7, 2015, 4:13:17 PM
     Author     : Samsung
 */
-.add .box#box-add {
+.box#box-add {
     margin: 50px 50px;    
 }
 
-.add .box#box-add .content-box {
+.box#box-add .content-box {
     
     height: auto;
     
@@ -23,6 +23,10 @@ Luan Van Thi Trac Nghiem Lap Trinh Can Ban
     height: auto;
     border-bottom: 1px solid #000 ;
     width: 900px;
+    
+}
+
+#add .row .id{
     
 }
 
@@ -39,12 +43,15 @@ Luan Van Thi Trac Nghiem Lap Trinh Can Ban
 }
 
 #add .row span input{
-    font-size: 20px;
-    width: 400px;
-    height: 20px;
+    font-size: 20px;    
+    margin-left: 10px;
 }
 
-#add .row #question{
+#add .row .question,.A,.B,.C,.D{
     width: 400px;
     height: 120px;
+}
+
+#add #add-form .btn{
+    margin: 15px 0 15px 500px;;
 }

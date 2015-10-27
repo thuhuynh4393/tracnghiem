@@ -7,6 +7,6 @@
 
 function getData($query){
     require_once './connect.php';
-    $result= mysql_query($query,$conn) or die("LOI Câu lệnh " . mysql_error(). "<br/>");
+    $result= mysqli_query($conn,$query) or die("LOI Câu lệnh " . mysql_error(). "<br/>");
     return $result;
 }

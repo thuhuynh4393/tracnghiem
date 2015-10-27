@@ -13,41 +13,31 @@ session_start();
     <script src="js/time.js" type="text/javascript"></script>
 </head>
 <body>
-
-    
     <!-- LOGO HEADER - Start-->
-    
-    <div id="top_background">
-
-        <div class="main_container">
-
-            <div class="top_bar">
-                    <!--Background Login-->
-                    <ul class="login">
-                        <li><a href="dangnhapCB.php">Đăng nhập |</a></li>
-                            <li><a href="#">Đăng ký</a></li>
-                    </ul>
-            </div>
-
-            <div class="header">
-                    <!--Logo Thi TNLTCB-->
-                <div class="logo">
-                    <h1><a href="index.php">Thi Trắc nghiệm Lập Trình Căn Bản</a></h1>
-                </div>
-
-                    <!--Menu-->
-                    <ul class="navigation">
-                        <li><a href="index.php">Trang chủ</a></li>
-                            <li><a href="http://elcit.ctu.edu.vn/">Elcit</a></li>
-                            <li><a href="http://www.ctu.edu.vn/">CTU</a></li>
-                            <li><a href="https://www.google.com/">Google</a></li>
-                    </ul>
-
-            </div>
-
-        </div>
+    <div class="header">
+      <div class="container">
+            <h1>Quiz C/C++</h1>	
+            <p>TEST KIẾN THỨC CỦA BẠN NGAY BÂY GIỜ</p>
+            <a class="btn" href="quiz.php">Starts</a>
+      </div>
     </div>
     
+    <div class="nav">
+      <div class="container">
+            <ul>
+                <li><a href="index.php">Trang chủ</a></li>
+                <li><a href="https://elcit.ctu.edu.vn/">Elcit</a></li>
+                <li><a href="http://www.ctu.edu.vn">CTU</a></li>
+                <li><a href="https://www.google.com/">Google</a></li>
+                <?php
+                    if(isset($_SESSION['userLogin']) && $_SESSION['userLogin']==TRUE){
+                        echo "<li><a href='edit.php'>Edit</a></li>";
+                        echo "<li><a href='logout.php'>Log Out</a></li>";
+                    }
+                ?>
+            </ul>
+      </div>
+    </div>
     <!-- LOGO HEADER - END-->
     
     
@@ -65,28 +55,30 @@ session_start();
                     foreach ($_SESSION["your_answer"] as $key => $value) {
                         $cauhoi_check[$key]=$value;
                     }
+                    //echo "Câu hỏi của thí sinh";
                     //print_r($cauhoi_check);
+                    
                     foreach ($_SESSION["right_answer"] as $key => $value) {
                         $right_check[$key]=$value;
                     }
+                    //echo "Câu đúng";
                     //print_r($right_check);
 
                     // In câu hỏi, câu trả lời, và đúng hoặc sai
                     foreach ($cauhoi_check as $key => $value) {
                         $query_check="SELECT noidungcauhoi, noidung FROM cauhoi,traloi "
-                                . "WHERE cauhoi.macauhoi =".$key." and matraloi='".$value."'"; 
+                                . "WHERE cauhoi.macauhoi =".$key." and traloi.macauhoi=".$key." and matraloi='".$value."'"; 
 
-                        $result_check=  mysql_query($query_check,$conn) or die("LOI TRUY van CHeck");
+                        $result_check=  mysqli_query($conn,$query_check) or die("LOI TRUY van CHeck"). mysqli_error();
 
                         //HIển thị trong box
                         echo "<div class='box' id='box-result'>";
 
-                            echo "<div class='header-box'><div class='tr'><div class='tc'></div></div></div>";
+                            
 
-                            echo "<div class='content-box'>";
+                            echo "<div class='content-box'>";                            
 
-
-                                while ($row_check=  mysql_fetch_array($result_check)){
+                                while ($row_check=  mysqli_fetch_array($result_check)){
                                     if(count($right_check)==0) {
                                         $comment_answer = "SAI";
                                     }  elseif(array_key_exists($key, $right_check)) {
@@ -94,19 +86,16 @@ session_start();
                                     }  else {
                                         $comment_answer = "Sai";
                                     }
-
                                     echo "<span class='result-question'>Câu hỏi: ".$row_check['noidungcauhoi']."</span>";
 
-                                    echo "<span class='result-answer'>Câu trả lời của bạn: ".$row_check['noidung']."</span>";
+                                    echo "<span class='result-answer'><h3>Câu trả lời của bạn:</h3> ".$row_check['noidung']."</span>";
 
-                                    echo "<span class='result-comment'>Kết quả: ".$comment_answer."</span>";                     
-
-
+                                    echo "<span class='result-comment'>Kết quả: ".$comment_answer."</span>";                  
                                 }
 
                             echo "</div>";
 
-                            echo "<div class='footer-box'><div class='br'><div class='bc'></div></div></div>";
+                            
                         echo "</div>";
                     }
                  
@@ -118,7 +107,11 @@ session_start();
     </div>
     </div>
     <!-- NOI DUNG - END-->
-
+    <div class="footer">
+          <div class="container">
+              <p>Thu Huynh</p>
+          </div>
+    </div>
 
     
     

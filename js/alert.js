@@ -7,18 +7,22 @@ function alertLogin(){
     alert("Thông tin đăng nhập sai");
 }
 
-function stay(){
-    return "Bạn sẵn sàng nộp bài?";
-}
-
 function confirmDelete(){
     var r = confirm("Bạn chắc muốn xóa?!");
-    if (r == true) {
-        
-    } else {
+    if (r == false) {       
         location.href='delete.php';
     }
     return r;
 }
 
+function confirmUpdate(){
+    var r = confirm("Bạn chắc muốn sửa nội dung?!");
+    if (r == false) {
+        location.href='update.php';
+    }
+    return r;
+}
 
+function stay(){
+    return "Bạn Xác Nhận Rời Đi?";
+}

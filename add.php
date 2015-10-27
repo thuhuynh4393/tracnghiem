@@ -1,19 +1,19 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
- "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
 <?php
     session_start();
 ?>
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html>
+<html >
 <head>
-<title>Thêm Câu Hỏi</title>
-<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
-<link href="css/line.css" rel="stylesheet" type="text/css"/>
-<link href="css/style.css" rel="stylesheet" type="text/css"/>
-<script src="jquery.js" type="text/javascript"></script>
-<link href="css/reset.css" rel="stylesheet" type="text/css"/>
-<link href="css/form.css" rel="stylesheet" type="text/css"/>
+    <title>Thêm Câu Hỏi</title>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <link href="css/line.css" rel="stylesheet" type="text/css"/>
+    <link href="css/style.css" rel="stylesheet" type="text/css"/>
+    <script src="jquery.js" type="text/javascript"></script>
+    <link href="css/reset.css" rel="stylesheet" type="text/css"/>
+    <link href="css/form.css" rel="stylesheet" type="text/css"/>
+    <script src="js/alert.js" type="text/javascript"></script>
 </head>
-<body>
+<body onbeforeunload="return stay()">
 
     <?php
         if($_SESSION['userLogin']==FALSE){
@@ -21,133 +21,169 @@
             }
         
     ?>
-
-<div class="add">
-        <div id="top_background">
-
-            <div class="main_container">
-
-                    <div class="top_bar">
-                            <ul class="login">
-                                <li><a href="logout.php">Đăng xuất</a></li>
-                            </ul>
-                    </div>
-
-                    <div class="header">
-                            <div class="logo">
-                                <h1><a href="index.php">Thi Trắc nghiệm Lập Trình Căn Bản</a></h1>
-                            </div>
-
-                            <ul class="navigation">
-                                <li><a href="index.php">Trang chủ</a></li>
-                                    <li><a href="http://elcit.ctu.edu.vn/">Elcit</a></li>
-                                    <li><a href="http://www.ctu.edu.vn/">CTU</a></li>
-                                    <li><a href="https://www.google.com/">Google</a></li>
-                            </ul>
-                    </div>  
-            </div>
-            
-
+    <div class="header" id="header-edit">
+        <div class="container">
+            <h1>Thêm câu hỏi</h1>
+            <p>Scroll Down</p>
+            <img src="Image/arrow-down_icon.png" width="50px" height="50px"></img>
         </div>
+    </div>
     
-    <div class="clr"></div>
-<!-------------FORM ADD - START --------->
+    <div class="nav">
+        <div class="container">
+            <ul>
+                <li><a href="index.php">Trang chủ</a></li>
+                <li><a href="#">Elcit</a></li>
+                <li><a href="#">CTU</a></li>
+                <li><a href="#">Google</a></li>
+                <li id="logout"><a href="logout.php">Logout</a></li>
+            </ul>
+        </div>
+    </div>
+
+        
+    
+    <div class="main">
+    <!-------------FORM ADD - START --------->
         <div class="box" id="box-add">
-                    <!-- tạo góc bo tròn cho box login-->
-                <div class="header-box"><div class="tr"><div class="tc"></div></div></div>
+                    
                 <!-- Noi dung list de thi-->
                 <div class="content-box">
                     <!--=========================Menu taskbar thêm xoa cap nhat-->
-                    <div class="task-bar">
-                        <div class="content">
+                    <div class="nav">
+                        <div class="container">
                             <ul>
                                 <li><a href="add.php">Thêm</a></li>
-                                <li class="line-w-45"></li>
+                                
                                 <li><a href="delete.php">Xóa</a></li>
-                                <li class="line-w-45"></li>
-                                <li><a href="#">Cập nhật</a></li>
+                                
+                                <li><a href="update.php">Cập nhật</a></li>
                             </ul>
                         </div>
-
                     </div>
-                    <!-- Add câu hỏi-->
+                    <!-- add câu hỏi-->
                     <div id="add">
-                        <!-- Mã câu hỏi-->
-                        <div class="row">
-                            <p id="title">Mã câu hỏi</p><span><input type="text"></input></span>
-                        </div>
-                        <!-- Mức độ-->
-                        <div class="row">
-                            <p id="title">Mức độ</p>
-                            <span>
-                                <select>
-                                    <option value="0">Khó</option>
-                                    <option value="1">Dễ</option>
-                                </select>
-                            </span>
-                        </div>
-                        <!-- Chương-->
-                        <div class="row">
-                            <p id="title">Chương</p>
-                            <span>
-                                <select>
-                                    <option value="1">Chương 1</option>
-                                    <option value="2">Chương 2</option>
-                                    <option value="3">Chương 3</option>
-                                    <option value="4">Chương 4</option>
-                                    <option value="5">Chương 5</option>
-                                    <option value="6">Chương 6</option>
-                                    <option value="7">Chương 7</option>
-                                    <option value="8">Chương 8</option>
-                                </select>
-                            </span>
-                        </div>
-                        <!-- Nội dung câu hỏi-->
-                        <div class="row">
-                            <p id="title">Nội Dung Câu Hỏi</p>
-                            <span><textarea id="question" ></textarea></span>
-                        </div>
-                        <!-- Nội dung câu trả lời -->
-                        <div class="row">
-                            <p id="title">Câu trả lời D</p>
-                            <span><textarea id="question" ></textarea></span>
-                        </div>
-                        <!-- Nội dung câu trả lời -->
-                        <div class="row">
-                            <p id="title">Câu trả lời A</p>
-                            <span><textarea id="question" ></textarea></span>
-                        </div>
-                        <!-- Nội dung câu trả lời -->
-                        <div class="row">
-                            <p id="title">Câu trả lời B</p>
-                            <span><textarea id="question" ></textarea></span>
-                        </div>
-                        <!-- Nội dung câu trả lời -->
-                        <div class="row">
-                            <p id="title">Câu trả lời C</p>
-                            <span><textarea id="question" ></textarea></span>
-                        </div>
-                        <!-- Mã Đáp Án-->
-                        <div class="row">
-                            <p id="title">Đáp Án</p>
-                            <span>
-                                <select>
-                                    <option value="a">A</option>
-                                    <option value="b">B</option>
-                                    <option value="c">C</option>
-                                    <option value="d">D</option>                                    
-                                </select>
-                            </span>
-                        </div>
-                        
-                        
+                        <form id="add-form" action="add-action.php" method="post">
+                            <!-- Mã câu hỏi-->
+                            <div class="row">
+                                <p id="title">Mã câu hỏi</p>
+                                <span>
+                                    <?php
+                                        require_once './connect.php';
+                                        $query_maxid="Select Max(macauhoi) As MaxId From cauhoi";
+                                        $result=  mysqli_query($conn, $query_maxid) or die("Lỗi truy vấn MAX ID". mysqli_error() . "<br/>");
+                                        $max =  mysqli_fetch_row($result); 
+                                        $maxid = $max['0']+1;
+                                        echo "<input class='id' type='text' disabled='disable' value=".$maxid.">";
+                                        echo "<input type='hidden' name='id-ques' value=".$maxid.">";    
+                                    ?>
+                                </span>
+                            </div>
+                            <!-- Mức độ-->
+                            <div class="row">
+                                <p id="title">Mức độ</p>
+                                <span>
+                                    <select name="difficult" required>
+                                        <option value="">---</option>
+                                        <option value="1">Khó</option>
+                                        <option value="0">Dễ</option>
+                                    </select>
+                                </span>
+                            </div>
+                            <!-- Chương-->
+                            <div class="row">
+                                <p id="title">Chương</p>
+                                <span>
+                                    <select name="chap" required>
+                                        <option value="">---</option>
+                                        <option value="1">Cú pháp</option>
+                                        <option value="2">Khai báo biến</option>
+                                        <option value="3">Kiểu dữ liệu</option>
+                                        <option value="4">Nhập/Xuất</option>
+                                        <option value="5">Thư viện Hàm</option>
+                                        <option value="6">Định nghĩa hàm</option>
+                                        <option value="7">Truyền tham số</option>
+                                        <option value="8">Gọi hàm</option>
+                                        <option value="9">Cấu trúc rẽ nhánh</option>
+                                        <option value="10">Cấu trúc lặp </option>
+                                        <option value="11">Đệ quy </option>
+                                        <option value="12">Con trỏ</option>
+                                        <option value="13">Mảng</option>
+                                        <option value="14">Chuỗi </option>
+                                        <option value="15">Tập tin </option>
+                                        <option value="16">Kiểu dữ liệu cấu trúc </option>
+                                        <option value="17">Cấp phát động vùng nhớ</option>
+                                        <option value="18">Chuyển đổi kiểu </option>
+                                        <option value="19">Toán tử</option>                                        
+                                    </select>
+                                </span>
+                            </div>
+                            <!-- Nội dung câu hỏi-->
+                            <div class="row">
+                                <p id="title">Nội Dung Câu Hỏi</p>
+                                <span>
+                                    <textarea name="question" class="question" required></textarea>
+                                </span>
+                            </div>
+                            <!-- Nội dung câu trả lời -->
+                            <div class="row">
+                                <p id="title">Câu trả lời A</p>
+                                <span>
+                                    <textarea name="A" class="A" required></textarea>
+                                </span>
+                            </div>
+                            <!-- Nội dung câu trả lời -->
+                            <div class="row">
+                                <p id="title">Câu trả lời B</p>
+                                <span>
+                                    <textarea name="B" class="B" required></textarea>
+                                </span>
+                            </div>
+                            <!-- Nội dung câu trả lời -->
+                            <div class="row">
+                                <p id="title">Câu trả lời C</p>
+                                <span>
+                                    <textarea name="C" class="C" required></textarea>
+                                </span>
+                            </div>
+                            <!-- Nội dung câu trả lời -->
+                            <div class="row">
+                                <p id="title">Câu trả lời D</p>
+                                <span>
+                                    <textarea name="D" class="D" required></textarea>
+                                </span>
+                            </div>
+                            <!-- Mã Đáp Án-->
+                            <div class="row">
+                                <p id="title">Đáp Án</p>
+                                <span>
+                                    <input type="radio" name="answer" value="A" required>A
+                                    <input type="radio" name="answer" value="B" required>B
+                                    <input type="radio" name="answer" value="C" required>C
+                                    <input type="radio" name="answer" value="D" required>D
+                                </span>
+                            </div>
+                            <input class="btn" type="submit" name="add" value="Thêm">
+                        </form>
                     </div>
-                    
                 </div>
-                <div class="footer-box"><div class="br"><div class="bc"></div></div></div>
         </div>
 <!-------------FORM ADD - START --------->
-
+        
+    </div>
+    
+    <div class="jumbotron">
+        <div class="container">
+            <p></p>
+        </div>
+    </div>
+    
+    
+    <div class="footer">
+        <div class="container">
+            <p></p>
+        </div>
+    </div>
 
 
     

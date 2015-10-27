@@ -7,21 +7,46 @@ Luan Van Thi Trac Nghiem Lap Trinh Can Ban
     Author     : Samsung
 */
 
-.main .left #box-login{            
-    margin-top:  10px;  
-    width: 320px;
-                        }    
-.main .left .box#box-login .content-box{            
-               
-                                    } 
-.main .left .box#box-login .title{            
-               height: 55px;
-               line-height: 55px;
-               font-family: Scribble;
-               
+.container form{
+    
+    border: 2px solid #000;
+     
 }
 
-.main .left .box#box-login .Error{            
-   color: red;            
-               
-} 
+.container .title{
+    font-size: 50px;
+    
+}
+
+.container input{
+    width: 250px;
+    height: 35px;
+    font-size: 20px;
+    line-height: 25px;
+}
+
+.container .row{
+    margin-top: 25px;
+}
+
+.container #error p{
+    color: #FF0000;
+}
+
+.container #submit input{
+    width: auto;
+    height: auto;
+    background:  #999999;
+    opacity: 0.5;
+    color: white;
+    padding: 5px 30px;
+    text-align: center;
+    transition: background 0.2s, color 0.2s;
+}
+
+.container #submit input:hover{
+    background: white ;
+    color: #999999;
+    cursor: pointer;
+    opacity: 0.8;
+}

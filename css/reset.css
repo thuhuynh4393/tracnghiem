@@ -6,6 +6,7 @@
 a {
 	text-decoration: none;
         display: inline-block;
+        color: white;
 }
 
 .clr {
@@ -19,4 +20,9 @@ ul li {
 
 img {
 	border: none;
+}
+
+pre{
+    white-space: pre-wrap;
+    font-family: "Times New Roman";
 }
